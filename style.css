@@ -14,6 +14,7 @@ header{
     background-position: center;
     background-size: cover;
     position: relative;
+    overflow: hidden;
 }
 nav{
     display: flex;
@@ -46,6 +47,9 @@ nav .nav-links ul li a{
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
 }
+nav .nav-links ul li a:active{
+    color: #cff0ad;
+}
 nav .nav-links ul li::after{
     content: '';
     height: 3px;
@@ -61,7 +65,7 @@ nav .nav-links ul li:hover::after{
 .hero{
     width: 80%;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -133,7 +137,6 @@ button .ripple .span {
         }
         .hero{
             top: 55%;
-            width: 80%;
         }
         nav .nav-links ul{
             padding: 30px;
