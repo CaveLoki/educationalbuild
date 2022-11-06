@@ -61,7 +61,7 @@ nav .nav-links ul li:hover::after{
 .hero{
     width: 80%;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -133,6 +133,7 @@ button .ripple .span {
         }
         .hero{
             top: 55%;
+            width: 80%;
         }
         nav .nav-links ul{
             padding: 30px;
