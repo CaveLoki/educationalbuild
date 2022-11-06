@@ -141,7 +141,7 @@ button .ripple .span {
         nav .nav-links ul{
             padding: 30px;
         }
-        nav .nav-links ul li{
+        /* nav .nav-links ul li{
             display: block;
             color: rgb(73, 155, 74);
             justify-content: center;
@@ -149,11 +149,12 @@ button .ripple .span {
             align-items: center;
             width: 1;
             padding: 15px 0;
-        }
+        } */
         .nav-links{
             position: absolute;
-            background: rgb(73, 155, 74);
+            background: rgba(73, 155, 74, 0.24);
             height: 100vh;
+            backdrop-filter: blur(4px);
             width: 200px;
             top: 0;
             right: 0;
