@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="./script.js"></script> -->
+    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;600;700;800&family=Raleway:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b2e36989bf.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">LOKi</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">COURSE</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+    </header>
+    <div class="hero">
+        <h1>
+            Heart Of University Learning
+        </h1>
+        <p>Creating a condusive environment where education can be easily impacted into the future of tomorrow. <br>We will be the fore-runner and surely will not disappoint.</p>
+        <button class="ripple">Visit Us To Know More</button>
+    </div>
+
+<script>
+    // responsiveness toggle sandwich
+    var navLinks = document.getElementById("navLinks")
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+// button ripple
+    $(function() {
+
+	$(".ripple").on('click', function(e) {
+
+		if ($(this).find('span').length === 0) {
+
+			$(this).append('<span></span>');
+
+			var ripple = $(this).find('span'),
+				size = ( $(this).innerWidth() > $(this).innerHeight() ) ? $(this).innerWidth()*2 : $(this).innerHeight()*2,
+				clickY = $(this).offset().top,
+				clickX = $(this).offset().left,
+				x = e.pageX - clickX,
+				y = e.pageY - clickY;
+
+			ripple.css({
+				'top': y +'px',
+				'left': x +'px',
+			});
+
+			ripple.animate({
+				'width': size +'px',
+				'height': size +'px',
+				'margin-top': -size/2 +'px',
+				'margin-left': -size/2 +'px',
+				'opacity': 0,
+			}, 600, function() {
+				$(this).remove();
+			});
+
+		}
+		
+	});
+
+});
+</script>
+</body>
+</html>
