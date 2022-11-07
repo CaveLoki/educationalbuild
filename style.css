@@ -1,6 +1,6 @@
 *{
     padding: 0;
-    margin: 0;
+    margin: 1px;
     box-sizing: border-box;
 }
 body{
@@ -11,7 +11,7 @@ body{
 .landing{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(-45deg, rgba(15, 78, 16, 0.7), rgba(7, 82, 8, 0.829)), url(./yale-university-1604158_1920.jpg);
+    background-image: linear-gradient(-45deg, rgba(15, 78, 16, 0.863), rgba(7, 82, 8, 0.836)), url(./yale-university-1604158_1920.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -160,7 +160,7 @@ span {
      font-size: 40px;
     }
     .hero{
-        margin-top: 155px;
+        margin-top: 40vh;
     }
 }
 @media(max-width: 700px) {
@@ -172,17 +172,17 @@ span {
         font-size: 12px;
     }
     .hero h1{
-    font-size: 28px;
+    font-size: 35px;
     }
     .hero p{
-    font-size: 14px;
+    font-size: 15px;
     line-height: 20px;
-    margin: 10px 0 30px;
+    margin: 30px 5px 60px;
     }
     .hero{
     width: 90%;
     margin: 0% auto;
-    margin-top: 175px;
+    margin-top: 33vh;
     }
     .nav-links{
     background-color: transparent;
@@ -222,11 +222,11 @@ span {
     
     
 }
-@media(max-width: 400px) {
+/* @media(max-width: 400px) {
     .hero h1 {
         font-size: 22px;
     }
-}
+} */
 .toggle .line1{
     transform: rotate(-45deg) translate(-4px, 4px);
 }
