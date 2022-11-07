@@ -1,6 +1,6 @@
 *{
     padding: 0;
-    margin: 0px;
+    margin: 0;
     box-sizing: border-box;
 }
 body{
@@ -70,8 +70,8 @@ nav a{
 }
 .burger div{
     width: 25px;
-    height: 2px;
-    margin: 4px;
+    height: 5px;
+    margin: 5px;
     background-color: #fff;
     border-radius: 4px;transition: all 0.5s ease;
 }
@@ -186,9 +186,13 @@ span {
     }
     .nav-links{
     background-color: transparent;
-    backdrop-filter: blur(20px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    backdrop-filter: blur(40px);
     width: 50%;
-    height: 89vh;
+    height: 94vh;
     top: 56px;
     right: 0;
     position: absolute;
@@ -203,7 +207,7 @@ span {
     }
     .nav-links ul li{
         display: block;
-        margin-top: 43px;
+        margin-top: 70px;
         opacity: 0;
     }
     .nav-links ul{
@@ -228,11 +232,11 @@ span {
     }
 } */
 .toggle .line1{
-    transform: rotate(-45deg) translate(-4px, 4px);
+    transform: rotate(-45deg) translate(-9px, 5px);
 }
 .toggle .line2 {
     opacity: 0;
 }
 .toggle .line3 {
-    transform: rotate(45deg) translate(-4px, -4px);
+    transform: rotate(45deg) translate(-9px, -5px);
 }
