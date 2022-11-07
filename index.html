@@ -15,11 +15,11 @@
 
 </head>
 <body>
-    <header>
+    <div class="landing">
+        <header>
         <nav>
-            <a href="index.html">LOKi</a>
+            <a href="index.html" class="logo">LOKi</a>
             <div class="nav-links" id="navLinks">
-                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="#">ABOUT</a></li>
@@ -28,64 +28,68 @@
                     <li><a href="#">CONTACT</a></li>
                 </ul>
             </div>
-            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </nav>
 
     </header>
     <div class="hero">
         <h1>
-            Heart Of University Learning
+            Earth's Largest Instituition
         </h1>
-        <p>Creating a condusive environment where education can be easily impacted into the future of tomorrow. <br>We will be the fore-runner and surely will not disappoint.</p>
-        <button class="ripple">Visit Us To Know More</button>
+        <p>Making website is now one of the easiest thing in the world. You just need to learn HTML, CSS,<br>Javascript and you are good to go.</p>
+        <button>Visit Us To Know More</button>
+    </div>
     </div>
 
 <script>
-    // responsiveness toggle sandwich
-    var navLinks = document.getElementById("navLinks")
-    function showMenu() {
-        navLinks.style.right = "0";
-    }
 
-    function hideMenu() {
-        navLinks.style.right = "-200px";
-    }
-// button ripple
-    $(function() {
+    // Ripple button
+   const buttons = document.querySelectorAll('button');
+   buttons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
 
-	$(".ripple").on('click', function(e) {
+        let x = e.clientX - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop;
 
-		if ($(this).find('span').length === 0) {
+        let ripples = document.createElement('span');
+        ripples.style.left = x + 'px';
+        ripples.style.top = y + 'px';
+        this.appendChild(ripples);
 
-			$(this).append('<span></span>');
+        setTimeout(() => {
+            ripples.remove()
+        }, 800);
 
-			var ripple = $(this).find('span'),
-				size = ( $(this).innerWidth() > $(this).innerHeight() ) ? $(this).innerWidth()*2 : $(this).innerHeight()*2,
-				clickY = $(this).offset().top,
-				clickX = $(this).offset().left,
-				x = e.pageX - clickX,
-				y = e.pageY - clickY;
+    })
+   })
+//    Navigation bar
+   const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
-			ripple.css({
-				'top': y +'px',
-				'left': x +'px',
-			});
+    burger.addEventListener('click', () => {
+// navbar toggle
+        nav.classList.toggle('nav-active');
+// animate links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 6}s`;
+            }
+        });
+        // animate burger
+        burger.classList.toggle('toggle');
 
-			ripple.animate({
-				'width': size +'px',
-				'height': size +'px',
-				'margin-top': -size/2 +'px',
-				'margin-left': -size/2 +'px',
-				'opacity': 0,
-			}, 600, function() {
-				$(this).remove();
-			});
+    });
 
-		}
-		
-	});
-
-});
+   }
+   navSlide();
 </script>
 </body>
 </html>
