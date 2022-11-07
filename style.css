@@ -1,6 +1,6 @@
 *{
     padding: 0;
-    margin: 1px;
+    margin: 0px;
     box-sizing: border-box;
 }
 body{
@@ -160,7 +160,7 @@ span {
      font-size: 40px;
     }
     .hero{
-        margin-top: 40vh;
+        margin: 30vh auto;
     }
 }
 @media(max-width: 700px) {
